@@ -1,0 +1,17 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/ggop
+  liquibase:
+    change-log: classpath:changelog/changelog.xml
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG

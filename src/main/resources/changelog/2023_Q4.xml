@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1701372188825-1" author="Alban Gashi">
+        <createTable tableName="owner">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addColumn tableName="car">
+            <column name="owner_id" type="int">
+                <constraints foreignKeyName="fk_owner_id" references="owner(id)" nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="1701372188825-2" author="Alban Gashi">
+        <createTable tableName="student">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="subject">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="student_subject_rel">
+            <column name="student_id" type="int">
+                <constraints foreignKeyName="fk_student_id" references="student(id)" nullable="false"/>
+            </column>
+
+            <column name="subject_id" type="int">
+                <constraints foreignKeyName="fk_subject_id" references="subject(id)" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1701717735263-1" author="Alban Gashi">
+        <createTable tableName="professor">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addColumn tableName="subject">
+            <column name="professor_id" type="int">
+                <constraints foreignKeyName="fk_professor_id" references="professor(id)" />
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="1701717735263-2" author="Matisos">
+        <createTable tableName="owner">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(255)"/>
+            <column name="last_name" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
