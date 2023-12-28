@@ -16,7 +16,7 @@ public class Student {
     private Integer id;
 
     /**
-     * The first name
+     * Komninimi
      */
     private String firstName;
 
