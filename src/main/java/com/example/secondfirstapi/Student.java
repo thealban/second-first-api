@@ -18,7 +18,7 @@ public class Student {
     /**
      * Komninimi
      */
-    private String firsN;
+    private String firsName;
 
     /**
      *
