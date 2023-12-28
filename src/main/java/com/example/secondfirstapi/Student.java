@@ -17,8 +17,14 @@ public class Student {
 
     private String firstName;
 
+    /**
+     * We gucci
+     */
     private String lastName;
 
+    /**
+     * Subjects bla bla bla
+     */
     @ManyToMany
     @JoinTable(
             name = "student_subject_rel",
