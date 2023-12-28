@@ -15,8 +15,12 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String firstName;
+    private String firsN;
 
+    /**
+     *
+     * Hello world
+     */
     private String lastName;
 
     @ManyToMany
