@@ -15,6 +15,9 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    /**
+     * Komninimi
+     */
     private String firsN;
 
     /**
@@ -23,6 +26,9 @@ public class Student {
      */
     private String lastName;
 
+    /**
+     * Subjects bla bla bla
+     */
     @ManyToMany
     @JoinTable(
             name = "student_subject_rel",
