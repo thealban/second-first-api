@@ -15,10 +15,20 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String firstName;
+    /**
+     * Komninimi
+     */
+    private String firsN;
 
+    /**
+     *
+     * Hello world
+     */
     private String lastName;
 
+    /**
+     * Subjects bla bla bla
+     */
     @ManyToMany
     @JoinTable(
             name = "student_subject_rel",

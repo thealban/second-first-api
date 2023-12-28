@@ -26,7 +26,7 @@ public class Subject {
     @JsonBackReference
     private List<Student> students;
 
-    @OneToOne()
+    @OneToOne
     @JsonManagedReference
     private Professor professor;
 }
