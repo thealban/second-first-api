@@ -16,7 +16,7 @@ public class Professor {
     private Integer id;
 
     private String firstName;
-    private String lastName;
+    private String lastN;
 
     @OneToOne(mappedBy = "professor")
     @JsonBackReference
