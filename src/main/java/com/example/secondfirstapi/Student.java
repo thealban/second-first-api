@@ -24,6 +24,7 @@ public class Student {
      *
      * Hello world
      */
+    @Column
     private String lastName;
 
     /**
