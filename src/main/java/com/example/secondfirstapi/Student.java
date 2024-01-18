@@ -18,6 +18,8 @@ public class Student {
     /**
      * Komninimi
      */
+
+    private Integer age;
     private String firstName;
 
     /**
@@ -36,4 +38,7 @@ public class Student {
     )
     @JsonManagedReference
     private List<Subject> subjects;
+
+
+
 }
