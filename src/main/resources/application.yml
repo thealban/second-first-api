@@ -3,9 +3,9 @@ spring:
     multipart:
       max-file-size: 10MB
   datasource:
-    username: postgres
-    password: postgres
-    url: jdbc:postgresql://localhost:5432/ggop
+    username: "${DB_USR:postgres}"
+    password: "${DB_PSW:postgres}"
+    url: "jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:ggop}"
   liquibase:
     change-log: classpath:changelog/changelog.xml
 
